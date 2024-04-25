@@ -1,8 +1,11 @@
 {
   "name": "snippets-generator",
   "version": "0.1.0",
-  "description": "\"Creates snippets for css classes which then can be used to envolve your intelllisense in VSCode\"",
+  "description": "\"Creates snippets for css classes which then can be used to envolve your intellisense in VSCode\"",
   "main": "main.js",
+  "bin": {
+    "snipgen": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Thoemmy/snippets-generator/issues"
   },
-  "homepage": "https://github.com/Thoemmy/snippets-generator#readme"
+  "homepage": "https://github.com/Thoemmy/snippets-generator#readme",
+  "dependencies": {
+    "commander": "^12.0.0"
+  }
 }

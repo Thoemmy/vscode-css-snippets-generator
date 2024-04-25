@@ -50,14 +50,14 @@ function main() {
   const directory = process.argv[2];
   var files = readFiles(directory);
   var allClasses = [];
+  var fileContent;
   files.forEach(function (file) {
     var filePath = path.join(process.cwd(), directory, file);
-    var fileContent = fs.readFileSync(filePath, "utf-8");
+    fileContent = fs.readFileSync(filePath, "utf-8");
     var classes = analyzeClasses(fileContent);
     allClasses.push.apply(allClasses, classes);
   });
   var generatedObject = generateObject(allClasses);
-  //console.log(JSON.stringify(generatedObject, null, 2));
   createCodeSnippetsFile(directory, filename, generatedObject);
 }
 
