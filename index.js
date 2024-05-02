@@ -3,13 +3,13 @@ const { program } = require("commander");
 const main = require("./src/main");
 
 program
-  .description("Generate VSCode snippets from css or scss files")
-  .requiredOption("-d, --directory <filename>", "Eingabedatei")
+  .description("Generate VSCode snippets from scss files")
+  .requiredOption("-d, --directory <folder>", "Input Folder")
   .option(
     "-s, --scope <scope>",
     "Which scope does the snippet have? html,css e.g."
   )
-  .option("-o, --output <filename>", "Ausgabedatei")
+  .option("-o, --output <filename>", "Output Filename")
   .parse(process.argv);
 
 const options = program.opts();

@@ -8,9 +8,9 @@ function readFiles(directory) {
   });
 }
 
-function parseCSS(css) {
+function parseCSS(scss) {
   var classRegex = /\.([^\s{]+)/g;
-  var lines = css.split("\n");
+  var lines = scss.split("\n");
   var classes = [];
   lines.forEach(function (line, index) {
     var match = classRegex.exec(line);
@@ -27,10 +27,10 @@ function parseCSS(css) {
         classObj.description = lines[index - 1].trim().substring(2).trim();
       }
 
-      // Find CSS properties and values
-      var classContent = css.substring(
-        css.indexOf(match[0]),
-        css.indexOf("}", css.indexOf(match[0])) + 1
+      // Find SCSS properties and values
+      var classContent = scss.substring(
+        scss.indexOf(match[0]),
+        scss.indexOf("}", scss.indexOf(match[0])) + 1
       );
       var cssRegex = /\{([^}]*)\}/;
       var cssMatch = cssRegex.exec(classContent);
@@ -92,8 +92,8 @@ function main(directory, outputFilename, scope) {
   });
 }
 
-// Beispiel CSS-Code mit mehreren Klassen und Kommentaren
-var css = `// This class is used for Headers
+// Beispiel SCSS-Code mit mehreren Klassen und Kommentaren
+var scss = `// This class is used for Headers
 .od-test-xl {
   line-height: 24px;
   font-size: 16px;
