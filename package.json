@@ -1,6 +1,6 @@
 {
   "name": "@thoemmy/snippets-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "\"Creates snippets for css classes which then can be used to envolve your intellisense in VSCode\"",
   "main": "main.js",
   "bin": {
