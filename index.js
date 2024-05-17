@@ -18,7 +18,4 @@ const directory = options.directory;
 const outputFilename = options.output;
 const scope = options.scope;
 
-//console.log(directory);
-//console.log(outputFilename);
-
 main(directory, outputFilename, scope);
